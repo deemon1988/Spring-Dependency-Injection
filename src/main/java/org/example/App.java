@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.config.SpringConfig;
+import org.example.model.Doctor;
+import org.example.model.ListPatients;
 import org.example.model.Patient;
 import org.example.model.Registry;
 import org.springframework.context.ApplicationContext;
@@ -12,13 +14,13 @@ public class App
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        /*Doctor doctor = context.getBean(Doctor.class);
-        System.out.println(doctor);
+        Doctor doctor = context.getBean(Doctor.class);
+       // System.out.println(doctor);
 
         Patient patient = context.getBean(Patient.class);
-        System.out.println(patient);
+       // System.out.println(patient);
 
-        Patient patient1 = context.getBean(Patient.class);
+      /*  Patient patient1 = context.getBean(Patient.class);
         Doctor doctor1 = context.getBean(Doctor.class);
 
         System.out.println(doctor.getName());
@@ -38,11 +40,23 @@ public class App
         Registry registry = context.getBean(Registry.class);  // можно ли связать со свойством доктора patientList ?
         System.out.println(registry.getPatient());
         System.out.println(registry.getDoctor());
+       // Patient patient = context.getBean(Patient.class);
+       // registry.setDoctor(patient);                          //  patientList.setPatient(patient) ?
+       // System.out.println(registry.getPatient());
+       // System.out.println(registry.getDoctor());
 
-        Patient patient = context.getBean(Patient.class);
-        registry.setDoctor(patient);                          //  patientList.setPatient(patient) ?
-        System.out.println(registry.getPatient());
-        System.out.println(registry.getDoctor());
+        ListPatients patients = context.getBean(ListPatients.class);
+       // patients.getPatients().add(new Patient("Sam Fortner"));
+       // patients.getPatients().add(patient);
+       // doctor.setPatientList(patients.getPatients());
+        doctor.getPatientList().add(patient);
+        patient.setDoctor(doctor);
+        System.out.println(patient);
+        System.out.println(doctor);
 
+
+
+        patients.add(patient);
+        System.out.println(patients);
     }
 }

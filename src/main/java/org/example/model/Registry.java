@@ -19,4 +19,8 @@ public class Registry {
     @Autowired
     @Qualifier("general")
     private Clinic doctor;
+
+   // @Autowired
+    //@Qualifier("list")
+   // private Clinic listPatients;
 }

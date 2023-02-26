@@ -43,7 +43,7 @@ public class Doctor implements Clinic{
 
     public void init(){
         List<Patient> patients = new ArrayList<>();
-        patients.add(new Patient("J. Smalling",new Doctor("Dr. Sanders", "General")));
+       // patients.add(new Patient("J. Smalling",new Doctor("Dr. Sanders", "General")));
         setPatientList(patients);
     }
 

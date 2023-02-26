@@ -37,7 +37,7 @@ public class Patient implements Clinic{
         return "Patient{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", doctor=" + doctor +
+               // ", doctor=" + doctor +
                 '}';
     }
 
